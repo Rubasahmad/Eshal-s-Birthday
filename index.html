@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Eshal 🐢💙</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  color: white;
+  text-align: center;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 3em;
+}
+
+button {
+  padding: 12px 25px;
+  background: #ff7eb3;
+  border: none;
+  border-radius: 30px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background: #ff4f9a;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 650px;
+  margin: 30px auto;
+}
+
+#countdown {
+  font-size: 1.5em;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  font-size: 0.8em;
+  opacity: 0.7;
+  padding-bottom: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LANDING -->
+<section>
+  <h1>Happy Birthday Eshal 🐢💙</h1>
+  <p>From <b>Motu & Cutesuii</b>, always.</p>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="card">
+  <h2>🎂 Countdown to Your Day</h2>
+  <p id="countdown">Loading...</p>
+</section>
+
+<!-- LETTER -->
+<section class="card">
+  <h2>💌 A Letter for You</h2>
+  <p>
+    Happy Birthday, my Eshal 🐢💙<br><br>
+    Even though I can’t be there in person, my heart is always with you.
+    You make my days brighter, my nights calmer, and my life happier.
+    I hope you always know how deeply loved you are —<br><br>
+    by your <b>Motu & Cutesuii</b>, forever.
+  </p>
+</section>
+
+<!-- PERSONAL MESSAGE -->
+<section class="card">
+  <h2>💙 A Message From Me</h2>
+  <p style="line-height:1.7;">
+    yooo eshuu turtle it’s yo boy rubas😭🫶🏼🎀 motuu😭🫶🏼🎀<br><br>
+    ilysmm yoii umm yoii u really means alot to me 😭🫶🏼😭🎀<br><br>
+    mujhe apke sath guzara hua har ek pal yaad hai and it’s the best memory of my life😭🫶🏼🫶🏼😭🎀🎀🎀<br><br>
+    abhi tow humnee or boht see memories sath bnanii hai😭🫶🏼😭🎀<br><br>
+    yk after 6-7 years kya hoga😼🙈😭😭 lol<br><br>
+    khair btw ilysmm yoiii and mai kch krr nhi sakta tha tow bss ek chota sa gift umm it’s not that good bss ek chota mota sa gift<br><br>
+    ilysmmm😭🫶🏼😭🎀🎀
+  </p>
+  <p style="margin-top:15px; opacity:0.8;">
+    — your Motu (Rubas) 🐢💙
+  </p>
+</section>
+
+<!-- SONG -->
+<section class="card">
+  <h2>🎵 Our Song</h2>
+  <p>“Those Eyes” — New West</p>
+  <audio controls>
+    <source src="those-eyes.mp3" type="audio/mpeg">
+  </audio>
+  <p style="font-size:0.9em; opacity:0.8;">
+    (Put the song file in the same folder)
+  </p>
+</section>
+
+<!-- TURTLE -->
+<section class="card">
+  <h2>🐢 Why Turtle?</h2>
+  <button onclick="showTurtle()">Click to find out</button>
+  <p id="turtleText" class="hidden">
+    Because you’re calm, comforting, cute in your own way,
+    and no matter how slow things get, you always feel like home.<br><br>
+    My Eshu Turtle 🐢💙
+  </p>
+</section>
+
+<!-- FINAL NOTE -->
+<section class="card">
+  <h2>🌙 Final Note</h2>
+  <p>
+    Distance can’t stop love.<br>
+    It can’t stop me from choosing you, celebrating you,
+    and loving you every single day.<br><br>
+    Always yours —<br>
+    <b>Motu & Cutesuii</b> 💙
+  </p>
+</section>
+
+<!-- FINAL IMAGE -->
+<section class="card">
+  <p style="font-size:1.1em; margin-bottom:15px;">
+    Even when we’re apart,<br>
+    it still feels like we’re holding on to each other.
+  </p>
+
+  <img 
+    src="us.jpg"
+    alt="Always us"
+    style="
+      width:100%;
+      max-width:400px;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    "
+  >
+
+  <p style="margin-top:15px; opacity:0.8;">
+    Always us 🐢💙
+  </p>
+</section>
+
+<footer>
+  Made with love by Motu & Cutesuii 🐢
+</footer>
+
+<script>
+function showTurtle() {
+  document.getElementById("turtleText").classList.remove("hidden");
+}
+
+const birthday = new Date("December 29, 2025 00:00:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = birthday - now;
+
+  if (diff <= 0) {
+    document.getElementById("countdown").innerHTML =
+      "🎉 Happy Birthday Eshal 🐢💙";
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+    `${days} days ${hours}h ${minutes}m ${seconds}s`;
+}, 1000);
+</script>
+
+</body>
+</html>
