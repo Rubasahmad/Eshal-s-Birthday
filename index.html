@@ -5,16 +5,15 @@
 <title>Happy Birthday Eshal 🐢💙</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  margin:0;
-  font-family:'Playfair Display',serif;
-  background:linear-gradient(to bottom,#0f2027,#203a43,#2c5364);
-  color:white;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
   text-align:center;
   overflow-x:hidden;
 }
@@ -22,96 +21,122 @@ body{
 /* LOCK */
 #lock{
   position:fixed;inset:0;
-  background:linear-gradient(to bottom,#0f2027,#203a43);
-  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(120deg,#0f2027,#203a43);
+  display:flex;
+  align-items:center;
+  justify-content:center;
   z-index:999;
 }
 #lockBox{
-  padding:30px;border-radius:20px;
-  background:rgba(255,255,255,.1);
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(12px);
+  padding:35px;
+  border-radius:25px;
+  animation:zoomIn .9s ease;
 }
 #lock input{
-  padding:12px 20px;border-radius:20px;border:none;
-  margin-top:10px;text-align:center;
+  padding:12px 18px;
+  border-radius:25px;
+  border:none;
+  margin-top:12px;
+  text-align:center;
 }
 #error{display:none;color:#ff9aa2;margin-top:10px}
-.shake{animation:shake .4s}
-@keyframes shake{
-  25%{transform:translateX(-6px)}
-  50%{transform:translateX(6px)}
+@keyframes zoomIn{
+  from{transform:scale(.5);opacity:0}
+  to{transform:scale(1);opacity:1}
 }
 
 /* SECTIONS */
 section{
-  padding:60px 20px;
+  padding:80px 20px;
   opacity:0;
-  transform:translateY(40px);
-  transition:1s;
+  transform:translateY(80px) scale(.95);
+  transition:1.2s cubic-bezier(.2,.8,.2,1);
 }
-section.show{opacity:1;transform:none}
+section.show{
+  opacity:1;
+  transform:none;
+}
 
 h1{
   font-family:'Pacifico',cursive;
-  font-size:3em;
+  font-size:3.2em;
+  animation:float 3s ease-in-out infinite;
+}
+@keyframes float{
+  50%{transform:translateY(-12px)}
 }
 
 .card{
-  background:rgba(255,255,255,.1);
-  padding:25px;
-  border-radius:15px;
-  max-width:650px;
-  margin:30px auto;
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(10px);
+  padding:30px;
+  border-radius:25px;
+  max-width:680px;
+  margin:40px auto;
+  box-shadow:0 25px 50px rgba(0,0,0,.35);
+  transition:.5s;
+}
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
 }
 
 button{
-  padding:12px 25px;
+  padding:12px 28px;
   border:none;
-  border-radius:30px;
-  background:#ff7eb3;
-  color:white;
+  border-radius:40px;
+  background:linear-gradient(135deg,#ff7eb3,#ff758c);
+  color:#fff;
   cursor:pointer;
-  margin-top:15px;
+  margin-top:18px;
+  transition:.3s;
 }
-button:hover{transform:scale(1.1)}
+button:hover{
+  transform:scale(1.2);
+}
 
 .hidden{display:none}
 
 /* HEARTS */
 .heart{
   position:fixed;
-  bottom:-20px;
-  font-size:20px;
-  animation:floatUp 6s linear infinite;
+  bottom:-30px;
+  font-size:22px;
+  animation:floatUp 7s linear infinite;
 }
 @keyframes floatUp{
-  to{transform:translateY(-120vh);opacity:0}
+  to{transform:translateY(-140vh) rotate(360deg);opacity:0}
 }
 
 /* CONFETTI */
 .confetti{
   position:fixed;
-  top:-10px;
-  font-size:18px;
-  animation:fall 4s linear infinite;
+  top:-20px;
+  font-size:22px;
+  animation:fall 4.5s linear infinite;
 }
 @keyframes fall{
-  to{transform:translateY(110vh) rotate(360deg)}
+  to{transform:translateY(130vh) rotate(720deg)}
 }
 
 /* GLOW */
-.glow{animation:glow 1.5s infinite alternate}
+.glow{
+  animation:glow 1.5s infinite alternate;
+}
 @keyframes glow{
-  from{text-shadow:0 0 10px #ff7eb3}
-  to{text-shadow:0 0 30px #ffd1e8}
+  from{text-shadow:0 0 12px #ff7eb3}
+  to{text-shadow:0 0 40px #ffd1e8}
 }
 
 audio{
   width:100%;
-  max-width:400px;
+  max-width:420px;
+  border-radius:15px;
 }
 
 footer{
-  opacity:.7;
+  opacity:.75;
   padding-bottom:40px;
 }
 </style>
@@ -119,7 +144,6 @@ footer{
 
 <body>
 
-<!-- PASSWORD LOCK -->
 <div id="lock">
   <div id="lockBox">
     <h2>💙 Enter Your Name 💙</h2>
@@ -130,19 +154,16 @@ footer{
   </div>
 </div>
 
-<!-- HERO -->
 <section>
   <h1>Happy Birthday Eshal 🐢💙</h1>
   <p>From <b>Motu & Cutesuii</b>, always.</p>
 </section>
 
-<!-- COUNTDOWN -->
 <section class="card">
   <h2>🎂 Countdown</h2>
   <p id="countdown">Loading...</p>
 </section>
 
-<!-- FORMAL LETTER -->
 <section class="card">
   <h2>💌 A Letter for You</h2>
   <p>
@@ -154,7 +175,6 @@ footer{
   </p>
 </section>
 
-<!-- CASUAL MESSAGE (EXACT FROM IMAGE) -->
 <section class="card" id="letter">
   <h2>💙 A Message From Me</h2>
   <p style="line-height:1.7;">
@@ -169,23 +189,20 @@ footer{
   <p style="opacity:.8">— your Motu (Rubas) 🐢💙</p>
 </section>
 
-<!-- VOICE MESSAGE -->
 <section class="card">
   <h2>🎤 Hear My Voice</h2>
-  <audio id="voice" controls>
-    <source src="voice-message.mp3" type="audio/mpeg">
+  <audio id="voice" controls preload="auto">
+    <source src="./voice-message.mp3" type="audio/mpeg">
   </audio>
 </section>
 
-<!-- SONG -->
 <section class="card">
   <h2>🎵 Our Song</h2>
-  <audio id="song" controls>
-    <source src="those-eyes.mp3" type="audio/mpeg">
+  <audio id="song" controls preload="auto">
+    <source src="./those-eyes.mp3" type="audio/mpeg">
   </audio>
 </section>
 
-<!-- TURTLE -->
 <section class="card">
   <h2>🐢 Why Turtle?</h2>
   <button onclick="showTurtle()">Click to find out</button>
@@ -196,13 +213,11 @@ footer{
   </p>
 </section>
 
-<!-- FINAL IMAGE -->
 <section class="card">
-  <img src="us.jpg" style="width:100%;max-width:400px;border-radius:20px">
-  <p style="margin-top:15px">Always us 🐢💙</p>
+  <img src="us.jpg" style="width:100%;max-width:420px;border-radius:25px">
+  <p style="margin-top:18px">Always us 🐢💙</p>
 </section>
 
-<!-- FINAL NOTE -->
 <section class="card hidden" id="surprise">
   <h2>🌙 Final Note</h2>
   <p>I choose you — always 🐢💙</p>
@@ -213,7 +228,6 @@ footer{
 </footer>
 
 <script>
-/* UNLOCK */
 function unlock(){
   if(pass.value.toLowerCase()==="eshal"){
     lock.style.display="none";
@@ -224,12 +238,9 @@ function unlock(){
   }
 }
 
-/* COUNTDOWN + MIDNIGHT CONFETTI */
 const birthday=new Date("December 29, 2025 00:00:00").getTime();
 setInterval(()=>{
-  const now=Date.now();
-  const diff=birthday-now;
-
+  const diff=birthday-Date.now();
   if(diff<=0){
     countdown.innerHTML="🎉 Happy Birthday Eshal 🐢💙";
     countdown.classList.add("glow");
@@ -237,7 +248,6 @@ setInterval(()=>{
     launchConfetti();
     return;
   }
-
   const d=Math.floor(diff/86400000);
   const h=Math.floor(diff/3600000)%24;
   const m=Math.floor(diff/60000)%60;
@@ -245,7 +255,6 @@ setInterval(()=>{
   countdown.innerHTML=`${d} days ${h}h ${m}m ${s}s`;
 },1000);
 
-/* CONFETTI */
 function launchConfetti(){
   setInterval(()=>{
     const c=document.createElement("div");
@@ -253,46 +262,28 @@ function launchConfetti(){
     c.innerHTML=["💙","🎀","🐢","✨"][Math.floor(Math.random()*4)];
     c.style.left=Math.random()*100+"vw";
     document.body.appendChild(c);
-    setTimeout(()=>c.remove(),4000);
-  },200);
+    setTimeout(()=>c.remove(),4500);
+  },160);
 }
 
-/* TURTLE BUTTON */
 function showTurtle(){
   turtleText.classList.remove("hidden");
 }
 
-/* HEARTS */
 setInterval(()=>{
   const h=document.createElement("div");
   h.className="heart";
   h.innerHTML="💙";
   h.style.left=Math.random()*100+"vw";
   document.body.appendChild(h);
-  setTimeout(()=>h.remove(),6000);
-},500);
+  setTimeout(()=>h.remove(),7500);
+},420);
 
-/* SCROLL ANIMATION */
 const obs=new IntersectionObserver(e=>{
   e.forEach(x=>x.isIntersecting&&x.target.classList.add("show"))
 });
 document.querySelectorAll("section").forEach(s=>obs.observe(s));
-
-/* AUDIO FADE */
-function fade(a,t){
-  const step=(t-a.volume)/20;
-  const i=setInterval(()=>{
-    a.volume=Math.min(1,Math.max(0,a.volume+step));
-    if(Math.abs(a.volume-t)<0.02)clearInterval(i);
-  },50);
-}
-voice.onplay=()=>!song.paused&&fade(song,.1);
-voice.onended=()=>fade(song,1);
 </script>
 
 </body>
 </html>
-
-
-
-
