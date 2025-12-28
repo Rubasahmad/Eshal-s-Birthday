@@ -146,8 +146,8 @@ footer{
 
 <div id="lock">
   <div id="lockBox">
-    <h2>💙 Enter Your Name 💙</h2>
-    <input id="pass" placeholder="Hint: Eshal">
+    <h2>💙 Enter Password 💙</h2>
+    <input id="pass" type="password">
     <br>
     <button onclick="unlock()">Unlock 🐢</button>
     <div id="error">Wrong 😭🐢</div>
@@ -229,7 +229,7 @@ footer{
 
 <script>
 function unlock(){
-  if(pass.value.toLowerCase()==="eshal"){
+  if(pass.value==="120125"){
     lock.style.display="none";
   }else{
     error.style.display="block";
@@ -287,3 +287,5 @@ document.querySelectorAll("section").forEach(s=>obs.observe(s));
 
 </body>
 </html>
+
+
